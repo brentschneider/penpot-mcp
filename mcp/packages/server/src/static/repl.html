@@ -453,7 +453,7 @@ return 'This will be the result';`
                     const $outputContent = $entry.find(".output-content");
 
                     if (isError) {
-                        const errorHtml = `<div class="error-output">Error: ${data.error}</div>`;
+                        const errorHtml = `<div class="error-output">Error: ${escapeHtml(String(data.error))}</div>`;
                         $outputContent.html(errorHtml);
                     } else {
                         let outputElements = "";
