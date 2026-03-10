@@ -89,7 +89,7 @@ export class ExportShapeTool extends Tool<ExportShapeArgs> {
         if (args.shapeId === "selection") {
             shapeCode = `penpot.selection[0]`;
         } else {
-            shapeCode = `penpotUtils.findShapeById("${args.shapeId}")`;
+            shapeCode = `penpotUtils.findShapeById(${JSON.stringify(args.shapeId)})`;
         }
         const asSvg = args.format === "svg";
         const code = `return penpotUtils.exportImage(${shapeCode}, "${args.mode}", ${asSvg});`;
